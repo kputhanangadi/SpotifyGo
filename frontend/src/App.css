@@ -52,7 +52,7 @@
     box-shadow: 0 2px 25px #1DB954;
     cursor: pointer;
     transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    animation: spin-btn infinite 20s linear;
+    animation: spin-btn infinite 0.1s linear;
   }
 }
 

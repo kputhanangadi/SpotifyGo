@@ -16,6 +16,7 @@ function App() {
           rel="noopener noreferrer"
         ></a>
         <PlaylistBtn />
+        <DestnInput />
       </header>
     </div>
   );
@@ -25,10 +26,16 @@ const LoginWebpge = () => {};
 
 const DestnInptWebpge = () => {};
 
+const DestnInput = () => {
+  return
+  <form action="https://canvas.ubc.ca/">
+    <input type="text" placeholder="Enter Destination!"></input>
+  </form>
+};
+
 const PlaylistBtn = () => {
   return <button id="GenPL">GENERATE PLAYLIST</button>;
 };
-
 
 const ChckBoxWebpge = () => {};
 
