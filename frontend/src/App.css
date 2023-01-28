@@ -37,18 +37,30 @@
   }
 }
 
-#GenPL {
-  background-color: #06D6A0;
-  border: none;
-  border-radius: 20px;
-  height: 100px;
-  width: 350px;
-  letter-spacing: .15rem;
-  color: white;
-  font-size: 18px;
-  font-family: Arial;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px #1DB954;
-  cursor: pointer;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+@media (prefers-reduced-motion: no-preference) {
+  #GenPL {
+    background-color: #06D6A0;
+    border: none;
+    border-radius: 20px;
+    height: 100px;
+    width: 350px;
+    letter-spacing: .15rem;
+    color: white;
+    font-size: 18px;
+    font-family: Arial;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px #1DB954;
+    cursor: pointer;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    animation: spin-btn infinite 20s linear;
+  }
+}
+
+@keyframes spin-btn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
