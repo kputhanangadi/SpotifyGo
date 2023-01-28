@@ -40,8 +40,15 @@
 #GenPL {
   background-color: #06D6A0;
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
   height: 100px;
-  width: 200px;
+  width: 350px;
+  letter-spacing: .15rem;
+  color: white;
+  font-size: 18px;
   font-family: Arial;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px #1DB954;
+  cursor: pointer;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
 }
