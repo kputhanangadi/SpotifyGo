@@ -36,25 +36,6 @@
   min-height: 20vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  #GenPL {
-    background-color: #06D6A0;
-    border: none;
-    border-radius: 20px;
-    height: 100px;
-    width: 350px;
-    letter-spacing: .15rem;
-    color: white;
-    font-size: 18px;
-    font-family: Arial;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px #1DB954;
-    cursor: pointer;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    animation: spin-btn infinite 0.1s linear;
-  }
-}
-
 #login-bt {
   /* background-color: #06a87d; */
   /* background-color: #1db954; */
@@ -70,18 +51,76 @@
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
 .divider {
   padding-top: 5vh;
   margin-left: 25%;
   margin-right: 25%;
 }
 
+<<<<<<< HEAD
 @keyframes spin-btn {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+=======
+/* Destination Page CSS */
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 100% / 1fr 1fr 1fr;
+  justify-content: center;
+  border: 4px solid wheat;
+}
+
+.grid-item {
+  text-align: center;
+  border: 4px solid green;
+  height: 1fr;
+  width: 1fr;
+  margin-top: 30%;
+  margin-bottom: 30%;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  #GenPL {
+    background-color: #06D6A0;
+    border: none;
+    border-radius: 20px;
+    height: 70px;
+    width: 350px;
+    letter-spacing: .15rem;
+    color: white;
+    font-size: 18px;
+    font-family: Arial;
+    cursor: pointer;
+    animation: unhovAni 1 0.1s linear forwards;
   }
 }
+
+#GenPL:hover {
+  animation: hovAni 1 0.1s linear forwards;
+}
+
+@keyframes hovAni {
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
+  from {
+    font-size: 18px;
+  }
+  to {
+    font-size: 22px;
+  }
+}
+<<<<<<< HEAD
+=======
+@keyframes unhovAni {
+  from {
+    font-size: 22px;
+  }
+  to {
+    font-size: 18px;
+  }
+}
+
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
