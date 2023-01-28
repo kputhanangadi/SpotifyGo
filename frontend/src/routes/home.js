@@ -4,8 +4,8 @@ import Divider from "@mui/material/Divider";
 
 export default function Home() {
   return (
-    <div className="Home">
-      <header className="Home-header">
+    <div className="center-font">
+      <header className="Home-color header home-height">
         <Title />
         <div className="flex-grow-med" />
       </header>

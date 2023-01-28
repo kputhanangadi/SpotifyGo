@@ -1,4 +1,4 @@
-.Home {
+.center-font {
   text-align: center;
   font-size: calc(10px + 2vmin);
 }
@@ -9,7 +9,7 @@
   }
 }
 
-.Home-header {
+.header {
   background-color: inherit;
   min-height: 60vh;
   display: flex;
@@ -17,8 +17,16 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: #06D6A0;
   border: none;
+}
+
+.home-height {
+  min-height: 60vh;
+}
+
+.Home-color {
+  /* background-color: #06D6A0; */
+  background-color: #06a87d; 
 }
 
 .Home-bottom {
@@ -29,7 +37,8 @@
 }
 
 #login-bt {
-  background-color: #1db954;
+  /* background-color: #06a87d; */
+  /* background-color: #1db954; */
   border: none;
   border-radius: 50px;
   height: 6vh;
@@ -42,12 +51,19 @@
   font-weight: bold;
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
 .divider {
   padding-top: 5vh;
   margin-left: 25%;
   margin-right: 25%;
 }
 
+<<<<<<< HEAD
+@keyframes spin-btn {
+=======
 /* Destination Page CSS */
 
 .grid-container {
@@ -88,6 +104,7 @@
 }
 
 @keyframes hovAni {
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
   from {
     font-size: 18px;
   }
@@ -95,6 +112,8 @@
     font-size: 22px;
   }
 }
+<<<<<<< HEAD
+=======
 @keyframes unhovAni {
   from {
     font-size: 22px;
@@ -104,3 +123,4 @@
   }
 }
 
+>>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
