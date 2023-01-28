@@ -6,6 +6,7 @@ import Root from "./routes/root";
 import Home from "./routes/home";
 import ErrorPage from "./routes/error";
 import Contact from "./routes/contact";
+import DestinationPage from "./routes/destination";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <Home />
+    {/* <Home /> */}
+    <DestinationPage/>
   </React.StrictMode>
 );
 

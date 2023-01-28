@@ -31,10 +31,6 @@ export default function Home() {
   );
 }
 
-const LoginWebpge = () => {};
-
-const DestnInptWebpge = () => {};
-
 function Title(props) {
   return (
     <>
@@ -51,20 +47,3 @@ function PlaylistBtn(props) {
     </Button>
   );
 }
-
-/*
-const DestnInput = () => {
-  return
-  <form action="https://canvas.ubc.ca/">
-    <input type="text" placeholder="Enter Destination!"></input>
-  </form>
-};
-*/
-
-const ChckBoxWebpge = () => {};
-
-const NewPlaylistWebpge = () => {}; // May not need this as a separate webpage
-
-// Make a function that shows an input form or textbox with current address
-// make a input form for destination
-// make a cool button
