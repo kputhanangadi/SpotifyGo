@@ -46,11 +46,21 @@ function Title(props) {
 
 function PlaylistBtn(props) {
   return (
-    <Button id="GenPL" variant="contained" href="https://google.com">
+    <Button id="login-bt" variant="contained" href="https://google.com">
       Login to Spotify
     </Button>
   );
 }
+
+/*
+const DestnInput = () => {
+  return
+  <form action="https://canvas.ubc.ca/">
+    <input type="text" placeholder="Enter Destination!"></input>
+  </form>
+};
+*/
+
 const ChckBoxWebpge = () => {};
 
 const NewPlaylistWebpge = () => {}; // May not need this as a separate webpage

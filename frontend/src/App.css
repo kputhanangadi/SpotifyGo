@@ -28,7 +28,26 @@
   min-height: 20vh;
 }
 
-#GenPL {
+@media (prefers-reduced-motion: no-preference) {
+  #GenPL {
+    background-color: #06D6A0;
+    border: none;
+    border-radius: 20px;
+    height: 100px;
+    width: 350px;
+    letter-spacing: .15rem;
+    color: white;
+    font-size: 18px;
+    font-family: Arial;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px #1DB954;
+    cursor: pointer;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    animation: spin-btn infinite 0.1s linear;
+  }
+}
+
+#login-bt {
   background-color: #1db954;
   border: none;
   border-radius: 50px;
@@ -42,20 +61,18 @@
   font-weight: bold;
 }
 
-.flex-grow-med {
-  flex-grow: 0.5;
-}
 
-.flex-grow-small {
-  flex-grow: 0.2;
-}
-
-.bottom-margin-0 {
-  margin-bottom: 0;
-}
 
 .divider {
   padding-top: 5vh;
   margin-left: 25%;
   margin-right: 25%;
+}
+@keyframes spin-btn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
