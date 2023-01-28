@@ -1,0 +1,24 @@
+.width50 {
+  width: 50vw;
+}
+
+.table-margin {
+  margin: 1vw;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.strict-width {
+  width: 5vw;
+  height: auto;
+}
+
+.margin-top {
+  margin-top: 15vh;
+}
+
+.selection-box {
+  border: 1px solid red;
+}
