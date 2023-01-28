@@ -1,10 +1,6 @@
-.App {
+.Home {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  font-size: calc(10px + 2vmin);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,35 +9,53 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Home-header {
+  background-color: inherit;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  background-color: #06D6A0;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Home-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20vh;
 }
 
 #GenPL {
-  background-color: #06D6A0;
+  background-color: #1db954;
   border: none;
   border-radius: 50px;
-  height: 100px;
+  height: 6vh;
   width: 200px;
-  font-family: Arial;
+  font-size: 0.5em;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding: 2vh, 3vh;
+  font-weight: bold;
+}
+
+.flex-grow-med {
+  flex-grow: 0.5;
+}
+
+.flex-grow-small {
+  flex-grow: 0.2;
+}
+
+.bottom-margin-0 {
+  margin-bottom: 0;
+}
+
+.divider {
+  padding-top: 5vh;
+  margin-left: 25%;
+  margin-right: 25%;
 }

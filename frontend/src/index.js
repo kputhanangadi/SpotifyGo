@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
 import Root from "./routes/root";
+import Home from "./routes/home";
 import ErrorPage from "./routes/error";
 import Contact from "./routes/contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
     errorElement: <ErrorPage />,
   },
   {
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-    {/* <App /> */}
+    {/* <RouterProvider router={router} /> */}
+    <Home />
   </React.StrictMode>
 );
 
