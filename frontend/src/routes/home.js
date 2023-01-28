@@ -1,5 +1,5 @@
 import "../App.css";
-import Button from "@mui/material/Button";
+import GenericButton from "../components/GenericButton";
 import Divider from "@mui/material/Divider";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
         }}
       />
       <div className="Home-bottom">
-        <PlaylistBtn />
+        <GenericButton />
       </div>
     </div>
   );
@@ -37,13 +37,5 @@ function Title(props) {
       <h1 className="bottom-margin-0">SpotifyGo</h1>
       <p>Never waste a moment</p>
     </>
-  );
-}
-
-function PlaylistBtn(props) {
-  return (
-    <Button id="login-bt" variant="contained" href="https://google.com">
-      Login to Spotify
-    </Button>
   );
 }

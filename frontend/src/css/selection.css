@@ -19,6 +19,11 @@
   margin-top: 15vh;
 }
 
-.selection-box {
-  border: 1px solid red;
+
+.flex-grow-med {
+  flex-grow: 0.5;
+}
+
+.flex {
+  display: flex;
 }

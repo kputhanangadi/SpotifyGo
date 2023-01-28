@@ -11,7 +11,6 @@
 
 .header {
   background-color: inherit;
-  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,19 +50,15 @@
   font-weight: bold;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
 .divider {
   padding-top: 5vh;
   margin-left: 25%;
   margin-right: 25%;
 }
 
-<<<<<<< HEAD
-@keyframes spin-btn {
-=======
+@keyframes spin-btn {}
+
 /* Destination Page CSS */
 
 .grid-container {
@@ -104,7 +99,6 @@
 }
 
 @keyframes hovAni {
->>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e
   from {
     font-size: 18px;
   }
@@ -112,8 +106,6 @@
     font-size: 22px;
   }
 }
-<<<<<<< HEAD
-=======
 @keyframes unhovAni {
   from {
     font-size: 22px;
@@ -122,5 +114,3 @@
     font-size: 18px;
   }
 }
-
->>>>>>> db495ebd6e0d970ef84fc19ebb8ffffd664fb28e

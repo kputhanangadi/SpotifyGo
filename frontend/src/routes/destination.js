@@ -1,21 +1,22 @@
 import "../App.css";
-import {Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 
 export default function DestinationPage() {
-    return (
-        <div class="grid-container">
-            <div class="grid-item">Input or address</div>
-            <div class="grid-item">
-                <form type="text">
-                    <input placeholder="Enter destination"></input>
-                </form>
-            </div>
-            <div class="grid-item"><button id="GenPL">NEW PLAYLIST</button></div>
-        </div>
-    );
-  }
+  return (
+    <div class="grid-container">
+      <div class="grid-item">Input or address</div>
+      <div class="grid-item">
+        <form type="text">
+          <input placeholder="Enter destination"></input>
+        </form>
+      </div>
+      <div class="grid-item">
+        <button id="GenPL">NEW PLAYLIST</button>
+      </div>
+    </div>
+  );
+}
 
-  
 //   .Input-place {
 //     border-radius: 10px;
 //     width: 300px;
@@ -45,11 +46,11 @@ function initAutocomplete() {
   postalField = document.querySelector("#postcode");
   // Create the autocomplete object, restricting the search predictions to
   // addresses in the US and Canada.
-  autocomplete = new google.maps.places.Autocomplete(address1Field, {
-    componentRestrictions: { country: ["us", "ca"] },
-    fields: ["address_components", "geometry"],
-    types: ["address"],
-  });
+  // autocomplete = new google.maps.places.Autocomplete(address1Field, {
+  //   componentRestrictions: { country: ["us", "ca"] },
+  //   fields: ["address_components", "geometry"],
+  //   types: ["address"],
+  // });
   address1Field.focus();
   // When the user selects an address from the drop-down, populate the
   // address fields in the form.
