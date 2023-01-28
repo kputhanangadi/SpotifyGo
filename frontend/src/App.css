@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+#GenPL {
+  background-color: #06D6A0;
+  border: none;
+  border-radius: 50px;
+  height: 100px;
+  width: 200px;
+  font-family: Arial;
+}
