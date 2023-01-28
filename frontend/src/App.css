@@ -41,26 +41,54 @@
   #GenPL {
     background-color: #06D6A0;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     height: 100px;
     width: 350px;
     letter-spacing: .15rem;
     color: white;
     font-size: 18px;
     font-family: Arial;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px #1DB954;
     cursor: pointer;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    animation: spin-btn infinite 0.1s linear;
+    animation: unhovAni 1 0.1s linear forwards;
   }
 }
 
-@keyframes spin-btn {
+#GenPL:hover {
+  animation: hovAni 1 0.1s linear forwards;
+}
+
+@keyframes hovAni {
   from {
-    transform: rotate(0deg);
+    font-size: 18px;
+    height: 100px;
+    width: 350px;
   }
   to {
-    transform: rotate(360deg);
+    font-size: 22px;
+    height: 90px;
+    width: 340px;
   }
+}
+
+@keyframes unhovAni {
+  from {
+    font-size: 22px;
+    height: 90px;
+    width: 340px;
+  }
+  to {
+    font-size: 18px;
+    height: 100px;
+    width: 350px;
+  }
+}
+
+.Input-place {
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  font-size: 25px;
+  font-family: Arial;
+  letter-spacing: .15rem;
+  text-indent: 10px;
 }
