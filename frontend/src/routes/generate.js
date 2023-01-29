@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 
 export default function GeneratePage() {
   const location = useLocation();
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     const playlists = location.state.playlists;
@@ -14,7 +15,6 @@ export default function GeneratePage() {
       }
     }
     async function getData() {
-      console.log(body);
       const response = await fetch("http://localhost:5000/generate", {
         method: "POST",
         headers: {
@@ -24,7 +24,7 @@ export default function GeneratePage() {
       });
       if (response.ok) {
         const data = (await response).json();
-        console.log(data);
+        setImage(data.value);
       }
     }
     getData();
