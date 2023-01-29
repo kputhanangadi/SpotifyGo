@@ -109,6 +109,7 @@ app.post("/generate", async function (req, res) {
   }
 
   // TODO: create an algo to process the songs >> assume that the time to meet is a variable
+  // const totTime = tracks
 });
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
