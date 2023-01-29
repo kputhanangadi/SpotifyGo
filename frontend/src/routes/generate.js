@@ -37,8 +37,8 @@ export default function GeneratePage() {
           <b>(Check your Spotify account for: "SpotifyGo")</b>
         </p>
       </div>
-      <div className="header">
-        <img className="gen-img" alt="" src={image}></img>
+      <div className="header-gen">
+        <img className="gen-img" src={image}></img>
       </div>
     </>
   );
