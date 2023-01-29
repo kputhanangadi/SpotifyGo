@@ -6,13 +6,13 @@ import Home from "./routes/home";
 import SelectionGrid from "./routes/selection";
 import ErrorPage from "./routes/error";
 import DestinationPage from "./routes/destination";
+import GeneratePage from "./routes/generate";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
-    // children: [],
   },
   {
     path: "/destination",
@@ -22,9 +22,13 @@ const router = createBrowserRouter([
     path: "/selection",
     element: <SelectionGrid />,
   },
+  {
+    path: "/generate",
+    element: <GeneratePage />,
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));  
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
