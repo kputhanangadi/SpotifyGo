@@ -35,4 +35,3 @@ export default function DestinationPage() {
 //     letter-spacing: .15rem;
 //     text-indent: 10px;
 //   }
-

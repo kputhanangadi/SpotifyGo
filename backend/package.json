@@ -4,6 +4,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "parse-url": "^8.1.0",
     "querystring": "^0.2.1",
     "request": "^2.88.2",
     "spotify-web-api-node": "^5.0.2"

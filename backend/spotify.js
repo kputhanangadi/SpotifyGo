@@ -4,6 +4,8 @@ const request = require("request");
 const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const parseUrl = require("parse-url");
 
 require("dotenv").config();
 
@@ -11,6 +13,8 @@ const app = express();
 app
   .use(express.static(__dirname + "/public"))
   .use(cors())
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use(bodyParser.json())
   .use(cookieParser());
 const port = 5000;
 
@@ -76,8 +80,7 @@ app.get("/callback", function (req, res) {
 });
 
 app.get("/playlists", async function (req, res) {
-  const playlists = await spotifyApi.getUserPlaylists();
-  // response.body.items
+  const playlists = await (await spotifyApi.getUserPlaylists()).body.items;
 
   var result = {};
   let count = 0;
@@ -92,9 +95,21 @@ app.get("/playlists", async function (req, res) {
   res.send(result);
 });
 
-// app.post("/generate", function (req, res) {
-//   req.body.
-// });
+app.post("/generate", async function (req, res) {
+  const process = req.body;
+  const links = [];
+  const tracks = [];
+  for (let i = 0; i < process.length; i++) {
+    const id = parseUrl(process[i].link).pathname.split("/")[2];
+    links.push(id);
+  }
+  for (let i = 0; i < links.length; i++) {
+    const response = await spotifyApi.getPlaylistTracks(links[i]);
+    tracks.push(response.body.items);
+  }
+
+  // TODO: create an algo to process the songs >> assume that the time to meet is a variable
+});
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
 console.log(authorizeURL);
