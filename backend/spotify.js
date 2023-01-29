@@ -132,3 +132,29 @@ console.log(authorizeURL);
 
 console.log(`Listening on ${port}`);
 app.listen(port);
+
+//LIL CODERS CODE [BELOW]!
+
+const axios = require('axios');
+
+// Get user input for origin and destination
+const origin = prompt('Enter the origin location:'); // ORIGIN HERE
+const destination = prompt('Enter the destination location:'); // DESINTAIOTN HERE
+
+// Set API key
+const API_KEY = 'AIzaSyDyOukcRQcB-UUFagu2LGt_nm137umn2k8';
+
+// Make API call to get distance and duration information
+axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${API_KEY}`)
+  .then(response => {
+    // Extract distance and duration information from API response
+    const distance = response.data.rows[0].elements[0].distance.text;
+    const duration = response.data.rows[0].elements[0].duration.text;
+
+    // Print distance and duration information to console
+    console.log(`Distance: ${distance}`);
+    console.log(`Duration: ${duration}`);
+  })
+  .catch(error => {
+    console.log(error);
+  });
