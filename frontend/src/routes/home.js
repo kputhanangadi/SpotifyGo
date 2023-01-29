@@ -2,6 +2,8 @@ import "../App.css";
 import GenericButton from "../components/GenericButton";
 import Divider from "@mui/material/Divider";
 
+const port = "http://localhost:5000";
+
 export default function Home() {
   return (
     <div className="center-font">
@@ -25,7 +27,7 @@ export default function Home() {
         }}
       />
       <div className="Home-bottom">
-        <GenericButton />
+        <GenericButton href={`${port}/login`} text={"Login to Spotify"} />
       </div>
     </div>
   );

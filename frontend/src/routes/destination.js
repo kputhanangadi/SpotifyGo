@@ -1,5 +1,6 @@
 import "../App.css";
 import { Grid } from "@mui/material";
+import GenericButton from "../components/GenericButton";
 
 export default function DestinationPage() {
   return (
@@ -11,7 +12,14 @@ export default function DestinationPage() {
         </form>
       </div>
       <div class="grid-item">
-        <button id="GenPL">NEW PLAYLIST</button>
+        <GenericButton
+          href={"http://localhost:3000/selection"}
+          id="GenPL"
+          text={"New Playlist"}
+        />
+        {/* <button href={"http://localhost:3000/selection"} id="GenPL">
+          NEW PLAYLIST
+        </button> */}
       </div>
     </div>
   );

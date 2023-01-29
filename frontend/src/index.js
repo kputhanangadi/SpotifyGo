@@ -16,17 +16,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "contacts/:contactId",
-    element: <Contact />,
+    path: "/destination",
+    element: <DestinationPage />,
+  },
+  {
+    path: "/selection",
+    element: <SelectionGrid />,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <RouterProvider router={router} /> */}
-    {/* <Home /> */}
-    <SelectionGrid />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

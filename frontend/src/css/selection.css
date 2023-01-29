@@ -27,3 +27,8 @@
 .flex {
   display: flex;
 }
+
+.Muibox-root {
+  width: 0.3;
+  height: auto;
+}
