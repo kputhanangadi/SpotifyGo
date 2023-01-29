@@ -14,7 +14,17 @@ app
   .use(cookieParser());
 const port = 5000;
 
-const scopes = ["playlist-modify-public", "playlist-read-private"];
+const scopes = [
+  "playlist-modify-public",
+  "playlists-modify-private",
+  "playlist-read-private",
+  "playlist-read-collaborative",
+  "user-read-currently-playing",
+  "user-read-recently-played",
+  "user-read-playback-state",
+  "user-top-read",
+  "user-modify-playback-state",
+];
 const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -72,7 +82,28 @@ app.get("/callback", function (req, res) {
   );
 });
 
-app.get("/selection", function (req, res) {});
+app.get("/playlists", async function (req, res) {
+  const playlists = (await spotifyApi.getUserPlaylists()).body.items;
+  // result.set(spotifyApi.getUser().then())
+  var result = {};
+  let count = 0;
+  for (let playlist of playlists) {
+    result[count++] = [
+      ["title", playlist.name],
+      ["image", playlist.images[0].url],
+      ["link", playlist.external_urls.spotify],
+      ["tracks", playlist.tracks.href],
+    ];
+    // result.push(m);
+  }
+  // var myObject = [];
+  // let obj = {};
+  // for (var key in myObject) {
+  //   obj[key] = myObject[key];
+  // }
+  res.send(result);
+  // res.redirect("http://localhost:3000/destination");
+});
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
 console.log(authorizeURL);
