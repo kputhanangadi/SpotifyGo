@@ -23,24 +23,22 @@ export default function GeneratePage() {
         body: JSON.stringify(body),
       });
       if (response.ok) {
-        const data = (await response).json();
-        setImage(data.value);
+        const data = await response.json();
+        setImage(data);
       }
     }
     getData();
   }, []);
   return (
     <>
-    <div className="gen-div">
-    <h1 className="bottom-margin-0 gen-h1">You're Good To Go!</h1>
-      <p className="gen-p">
-        <b>
-          (Check your Spotify account for: "SpotifyGo")
-        </b>
-      </p>
+      <div className="gen-div">
+        <h1 className="bottom-margin-0 gen-h1">You're Good To Go!</h1>
+        <p className="gen-p">
+          <b>(Check your Spotify account for: "SpotifyGo")</b>
+        </p>
       </div>
       <div className="header">
-        <img className="gen-img" src="https://www.shorturl.at/img/shorturl-icon.png"></img>
+        <img className="gen-img" alt="" src={image}></img>
       </div>
     </>
   );
