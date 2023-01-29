@@ -144,14 +144,16 @@ app.post("/generate", async function (req, res) {
   }
 });
 
-app.get("/locations", async function (req, res) {
+app.post("/locations", async function (req, res) {
   const origin = req.body.origin;
   const destination = req.body.destination;
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${GOOGLE_API_KEY}`;
+
   const response = await fetch(url);
+  const data = await response.json();
+  // const x = response.json();
   // const distance = response.data.rows[0].elements[0].distance.text;
-  duration = response.data.rows[0].elements[0].duration.text;
-  console.log(duration);
+  duration = data.rows[0].elements[0].duration.text;
   res.redirect("http://localhost:3000/selection");
 });
 

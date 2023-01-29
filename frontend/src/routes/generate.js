@@ -22,7 +22,6 @@ export default function GeneratePage() {
         },
         body: JSON.stringify(body),
       });
-      console.log(response);
       if (response.ok) {
         const data = (await response).json();
         console.log(data);

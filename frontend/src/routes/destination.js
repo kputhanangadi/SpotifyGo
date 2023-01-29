@@ -44,8 +44,12 @@ export default function DestinationPage() {
           <GenericButton
             className="grid-item"
             text={"New Playlist"}
-            onChange={async () => {
+            onClick={async () => {
               await fetch("http://localhost:5000/locations", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
                 body: JSON.stringify({ origin: origin, destination: destination }),
               });
             }}
