@@ -39,6 +39,9 @@ export default function GeneratePage() {
         </b>
       </p>
       </div>
+      <div className="header">
+        <img className="gen-img" src="https://www.shorturl.at/img/shorturl-icon.png"></img>
+      </div>
     </>
   );
 }
