@@ -37,7 +37,11 @@ function Title(props) {
   return (
     <>
       <h1 className="bottom-margin-0">SpotifyGo</h1>
-      <p><b><i>Never waste a moment</i></b></p>
+      <p>
+        <b>
+          <i>Never waste a moment</i>
+        </b>
+      </p>
     </>
   );
 }
