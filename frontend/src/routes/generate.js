@@ -32,7 +32,6 @@ export default function GeneratePage() {
   }, []);
   return (
     <>
-      <h1>hi</h1>
       <div>{location.state.name}</div>;
     </>
   );

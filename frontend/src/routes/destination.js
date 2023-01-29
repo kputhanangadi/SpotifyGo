@@ -2,45 +2,41 @@ import "../App.css";
 import { useState } from "react";
 import { Grid } from "@mui/material";
 import GenericButton from "../components/GenericButton";
-import { TextField } from "@mui/material";
-import { useEffect } from "react";
+import SearchBar from "../components/AutoComplete";
+import { Link } from "react-router-dom";
 
 export default function DestinationPage() {
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
 
-  // useEffect(() => {
-  //   // fetch place details for the first element in placePredictions array
-  //   if (placePredictions.length)
-  //     placesService?.getDetails(
-  //       {
-  //         placeId: placePredictions[0].place_id,
-  //       }
-  //       // (placeDetails) => savePlaceDetailsToState(placeDetails)
-  //     );
-  // }, [placePredictions]);
+  const handleGetOrigin = (place) => {
+    setOrigin(place);
+  };
+
+  const handleGetDestination = (place) => {
+    setDestination(place);
+  };
 
   return (
     <div className="grid-container center-font">
       <div className="grid-item">
-        <TextField id="filled-basic" label="Start" variant="filled" />
-        {/* <Input.Search
-          style={{ color: "black" }}
-          value={value}
-          placeholder="Debounce 500 ms"
-          onChange={(evt) => {
-            getPlacePredictions({ input: evt.target.value });
-            setValue(evt.target.value);
-          }}
-          loading={isPlacePredictionsLoading}
-        /> */}
+        <SearchBar getPlaceFunc={handleGetOrigin} location={"Start"} />
       </div>
       <div className="grid-item">
-        <TextField id="filled-basic" label="Destination" variant="filled" />
+        <SearchBar getPlaceFunc={handleGetDestination} location={"End"} />
       </div>
-        <GenericButton
-          className="grid-item"
-          href={"http://localhost:3000/selection"}
-          text={"New Playlist"}
-        />
+      <div className="grid-item">
+        <Link to="/selection">
+          <GenericButton
+            className="grid-item"
+            text={"New Playlist"}
+            onChange={async () => {
+              await fetch("http://localhost:5000/locations", {
+                body: JSON.stringify({ origin: origin, destination: destination }),
+              });
+            }}
+          />
+        </Link>
       </div>
   );
 }
