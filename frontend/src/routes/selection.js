@@ -113,12 +113,7 @@ export default function SelectionPage(props) {
           to="/generate"
           state={{ name: "hi", playlists: playlists, checked: checked }}
         >
-          <GenericButton
-            text={"Generate Playlist!"}
-            // onChange={() => {
-            //   handleGenerate();
-            // }}
-          />
+          <GenericButton text={"Generate Playlist!"} />
         </Link>
       </div>
     </>

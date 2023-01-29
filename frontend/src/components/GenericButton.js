@@ -8,7 +8,7 @@ export default function GenericButton(props) {
       variant="contained"
       target="_self"
       href={props.href}
-      onChange={props.onChange}
+      onClick={props.onClick}
     >
       {props.text}
     </Button>

@@ -36,10 +36,6 @@ export default class SearchBar extends React.Component {
           variant="outlined"
           sx={{ width: "15vw" }}
           label={this.location}
-          // onChange={(event) => {
-          //   this.text = event.target.value;
-          //   console.log(this.text);
-          // }}
         />
       </>
     );
