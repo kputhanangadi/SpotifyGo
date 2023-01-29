@@ -1,5 +1,5 @@
 .center-font {
-  text-align: center;
+  /* text-align: center; */
   font-size: calc(10px + 2vmin);
   /* background-color: #06D6A0; */
 }
@@ -25,7 +25,7 @@ h1 {
 
 .Home-color {
   /* background-color: #06D6A0; */
-  background-color: #08c290; 
+  background-color: #06a87d; 
 }
 
 .Home-bottom {
@@ -62,21 +62,21 @@ h1 {
 
 .grid-container {
   display: grid;
-  grid-template-areas: 100% / 1fr 1fr 1fr;
+  height: 80vmin;
+  border-radius: 50px;
+  grid-template-areas: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr;
   justify-content: center;
   /* border: 4px solid wheat; */
   margin-top: 10vh;
   background-color: #06D6A0;
+  padding-top: 100px;
 }
 
 .grid-item {
   text-align: center;
   height: 1fr;
   width: 1fr;
-  margin-top: 30%;
-  margin-bottom: 30%;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   #GenPL {
