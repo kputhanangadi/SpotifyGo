@@ -23,6 +23,11 @@ const scopes = [
   "playlists-modify-private",
   "playlist-read-private",
   "playlist-read-collaborative",
+  "user-read-private",
+  "user-library-modify",
+  "user-library-read",
+  "user-follow-modify",
+  "user-follow-read",
 ];
 const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
