@@ -2,12 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
-import Root from "./routes/root";
 import Home from "./routes/home";
-import SelectionGrid from "./routes/selection";
+import SelectionPage from "./routes/selection";
 import ErrorPage from "./routes/error";
-import Contact from "./routes/contact";
 import DestinationPage from "./routes/destination";
+import GeneratePage from "./routes/generate";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/selection",
-    element: <SelectionGrid />,
+    element: <SelectionPage />,
+  },
+  {
+    path: "/generate",
+    element: <GeneratePage />,
   },
 ]);
 
