@@ -56,7 +56,7 @@ export default function SelectionPage(props) {
         <Check num={props.num} />
         <Title title={props.title} />
         <Box
-          sx={{ width: "5vw" , borderRadius: "10px"}}
+          sx={{ width: "5vw", borderRadius: "10px" }}
           component="img"
           // alt={"Spotify album image"}
           src={props.image}
@@ -99,7 +99,9 @@ export default function SelectionPage(props) {
   return (
     <>
       <div className="header center-font margin-top selection-box flex">
-        <h2 style={{backgroundColor: "#13bd90", padding: "40px", borderRadius: "20px"}}>Select the playlists you want to curate from!</h2>
+        <h2 style={{ backgroundColor: "#13bd90", padding: "40px", borderRadius: "20px" }}>
+          Select the playlists you want to curate from!
+        </h2>
         {/* {makeRows()} */}
         <Row image={playlists[0].image} title={playlists[0].title} num={0} />
         <Row image={playlists[1].image} title={playlists[1].title} num={1} />

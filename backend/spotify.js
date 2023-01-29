@@ -19,20 +19,16 @@ app
 const port = 5000;
 
 const scopes = [
-  "playlist-modify-public",
-  "playlists-modify-private",
   "playlist-read-private",
   "playlist-read-collaborative",
-  "user-read-currently-playing",
-  "user-read-recently-played",
-  "user-read-playback-state",
-  "user-top-read",
-  "user-modify-playback-state",
+  "playlist-modify-private",
+  "playlist-modify-public",
 ];
+
 const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-const state = "test";
+const state = "abc";
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 var duration = 0;
 
