@@ -99,6 +99,10 @@ app.post("/generate", async function (req, res) {
   const process = req.body;
   const links = [];
   const tracks = [];
+  var mega_list = [];
+  var time_to_destination = 0; // will be given to me
+  var new_playlist = []; // array with tracks in new playlist
+  var dup_set = new Set();
   for (let i = 0; i < process.length; i++) {
     const id = parseUrl(process[i].link).pathname.split("/")[2];
     links.push(id);
@@ -107,9 +111,22 @@ app.post("/generate", async function (req, res) {
     const response = await spotifyApi.getPlaylistTracks(links[i]);
     tracks.push(response.body.items);
   }
-
+  mega_list = tracks.flat();
   // TODO: create an algo to process the songs >> assume that the time to meet is a variable
-  // const totTime = tracks
+  while (time_to_destination > 0) {
+    var curr_index = getRandomInt(0, mega_list.length);
+    if (!(dup_set.has(mega_list[curr_index].track.id))) {
+      new_playlist.push(`spotify:track:${mega_list[curr_index].track.id}`);
+      time_to_destination -= mega_list[curr_index].track.duration_ms;
+    }
+  }
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 });
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
