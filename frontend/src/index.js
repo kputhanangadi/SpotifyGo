@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
-import Root from "./routes/root";
+// import Root from "./routes/root";
 import Home from "./routes/home";
 import SelectionGrid from "./routes/selection";
 import ErrorPage from "./routes/error";
-import Contact from "./routes/contact";
+// import Contact from "./routes/contact";
 import DestinationPage from "./routes/destination";
 
 const router = createBrowserRouter([
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));  
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

@@ -10,10 +10,10 @@ export default function DestinationPage() {
       <div className="grid-item">
         <TextField id="outlined-basic" label="Start" variant="outlined" />
       </div>
-      <div class="grid-item">
+      <div className="grid-item">
         <TextField id="outlined-basic" label="Destination" variant="outlined" />
       </div>
-      <div class="grid-item">
+      <div className="grid-item">
         <GenericButton className="grid-item"
           href={"http://localhost:3000/selection"}
           text={"New Playlist"}
