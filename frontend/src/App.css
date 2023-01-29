@@ -1,6 +1,12 @@
 .center-font {
   text-align: center;
   font-size: calc(10px + 2vmin);
+  /* background-color: #06D6A0; */
+}
+
+h1 {
+  font-size: 200px;
+  margin-bottom: 10px;
 }
 
 .header {
@@ -58,7 +64,8 @@
   display: grid;
   grid-template-areas: 100% / 1fr 1fr 1fr;
   justify-content: center;
-  border: 4px solid wheat;
+  /* border: 4px solid wheat; */
+  margin-top: 10%;
 }
 
 .grid-item {

@@ -6,8 +6,8 @@ import { TextField } from "@mui/material";
 
 export default function DestinationPage() {
   return (
-    <div class="grid-container">
-      <div class="grid-item">
+    <div className="grid-container center-font">
+      <div className="grid-item">
         <TextField id="outlined-basic" label="Start" variant="outlined" />
       </div>
       <div class="grid-item">
@@ -15,7 +15,7 @@ export default function DestinationPage() {
       </div>
       <div class="grid-item">
         <GenericButton
-          class="grid-item"
+          className="grid-item"
           href={"http://localhost:3000/selection"}
           text={"New Playlist"}
         />
