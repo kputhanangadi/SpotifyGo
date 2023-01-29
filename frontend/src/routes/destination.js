@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import GenericButton from "../components/GenericButton";
 import SearchBar from "../components/AutoComplete";
 import { Link } from "react-router-dom";
+import Divider from "@mui/material/Divider";
 
 export default function DestinationPage() {
   const [origin, setOrigin] = useState("");
@@ -23,8 +24,21 @@ export default function DestinationPage() {
         <SearchBar getPlaceFunc={handleGetOrigin} location={"Start"} />
       </div>
       <div className="grid-item">
-        <SearchBar getPlaceFunc={handleGetDestination} location={"End"} />
+        <SearchBar getPlaceFunc={handleGetDestination} location={"Destination"} />
       </div>
+      <Divider
+        // variant="middle"
+        flexItem="true"
+        className="divider"
+        // textAlign="center"
+        // absolute="true"
+        sx={{
+          borderBottomWidth: 5,
+          borderColor: "#474955",
+          width: "100%",
+          marginBottom: "37.5%",
+        }}
+      />
       <div className="grid-item">
         <Link to="/selection">
           <GenericButton
@@ -37,6 +51,7 @@ export default function DestinationPage() {
             }}
           />
         </Link>
+      </div>
       </div>
   );
 }

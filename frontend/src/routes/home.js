@@ -20,7 +20,7 @@ export default function Home() {
         // absolute="true"
         sx={{
           borderBottomWidth: 5,
-          borderColor: "#06D6A0",
+          borderColor: "#13bd90",
           width: 0.25,
           marginLeft: "37.5%",
           marginRight: "37.5%",
