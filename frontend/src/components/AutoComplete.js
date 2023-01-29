@@ -23,8 +23,7 @@ export default class SearchBar extends React.Component {
 
   handlePlaceChanged() {
     const place = this.autocomplete.getPlace();
-    const addr = place.formatted_address;
-    this.props.getPlaceFunc(addr);
+    this.props.getPlaceFunc(place.formatted_address);
   }
 
   render() {

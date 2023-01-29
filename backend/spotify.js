@@ -28,6 +28,8 @@ const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 const state = "test";
+const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+var duration = 0;
 
 const spotifyApi = new SpotifyWebApi({
   redirectUri: redirectUri,
@@ -109,7 +111,6 @@ app.post("/generate", async function (req, res) {
   }
 
   var offset = 0;
-  const pagesize = 100;
 
   for (let i = 0; i < links.length; i++) {
     var response = await spotifyApi.getPlaylistTracks(links[i], {
@@ -126,11 +127,11 @@ app.post("/generate", async function (req, res) {
       nextLink = response.body.next;
     }
   }
+
   mega_list = tracks.flat();
-  // TODO: create an algo to process the songs >> assume that the time to meet is a variable
   while (time_to_destination > 0) {
     var curr_index = getRandomInt(0, mega_list.length);
-    if (!(dup_set.has(mega_list[curr_index].track.id))) {
+    if (!dup_set.has(mega_list[curr_index].track.id)) {
       new_playlist.push(`spotify:track:${mega_list[curr_index].track.id}`);
       time_to_destination -= mega_list[curr_index].track.duration_ms;
     }
@@ -141,7 +142,17 @@ app.post("/generate", async function (req, res) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+});
 
+app.get("/locations", async function (req, res) {
+  const origin = req.body.origin;
+  const destination = req.body.destination;
+  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${GOOGLE_API_KEY}`;
+  const response = await fetch(url);
+  // const distance = response.data.rows[0].elements[0].distance.text;
+  duration = response.data.rows[0].elements[0].duration.text;
+  console.log(duration);
+  res.redirect("http://localhost:3000/selection");
 });
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
@@ -149,29 +160,3 @@ console.log(authorizeURL);
 
 console.log(`Listening on ${port}`);
 app.listen(port);
-
-//LIL CODERS CODE [BELOW]!
-
-const axios = require('axios');
-
-// Get user input for origin and destination
-const origin = prompt('Enter the origin location:'); // ORIGIN HERE
-const destination = prompt('Enter the destination location:'); // DESINTAIOTN HERE
-
-// Set API key
-const API_KEY = 'AIzaSyDyOukcRQcB-UUFagu2LGt_nm137umn2k8';
-
-// Make API call to get distance and duration information
-axios.get(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${API_KEY}`)
-  .then(response => {
-    // Extract distance and duration information from API response
-    const distance = response.data.rows[0].elements[0].distance.text;
-    const duration = response.data.rows[0].elements[0].duration.text;
-
-    // Print distance and duration information to console
-    console.log(`Distance: ${distance}`);
-    console.log(`Duration: ${duration}`);
-  })
-  .catch(error => {
-    console.log(error);
-  });

@@ -2,11 +2,8 @@ import "../App.css";
 import { useState } from "react";
 import { Grid } from "@mui/material";
 import GenericButton from "../components/GenericButton";
-import { TextField } from "@mui/material";
-import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
-import { useEffect } from "react";
-import useGoogle from "react-google-autocomplete/lib/usePlacesAutocompleteService";
 import SearchBar from "../components/AutoComplete";
+import { Link } from "react-router-dom";
 
 export default function DestinationPage() {
   const [origin, setOrigin] = useState("");
@@ -29,12 +26,17 @@ export default function DestinationPage() {
         <SearchBar getPlaceFunc={handleGetDestination} location={"End"} />
       </div>
       <div className="grid-item">
-        <GenericButton
-          className="grid-item"
-          // href={"http://localhost:3000/selection"}
-          text={"New Playlist"}
-          // onChange={}
-        />
+        <Link to="/selection">
+          <GenericButton
+            className="grid-item"
+            text={"New Playlist"}
+            onChange={async () => {
+              await fetch("http://localhost:5000/locations", {
+                body: JSON.stringify({ origin: origin, destination: destination }),
+              });
+            }}
+          />
+        </Link>
       </div>
     </div>
   );
