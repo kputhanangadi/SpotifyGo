@@ -56,7 +56,7 @@ export default function SelectionPage(props) {
         <Check num={props.num} />
         <Title title={props.title} />
         <Box
-          sx={{ width: "5vw" }}
+          sx={{ width: "5vw" , borderRadius: "10px"}}
           component="img"
           // alt={"Spotify album image"}
           src={props.image}
