@@ -28,7 +28,7 @@ const scopes = [
 const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-const state = "abc";
+const state = "test";
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 var duration = 0;
 
@@ -106,9 +106,7 @@ app.post("/locations", async function (req, res) {
   const locationResponse = await fetch(url);
   if (locationResponse.ok) {
     const data = await locationResponse.json();
-    try {
-      duration = data.rows[0].elements[0].duration.value;
-    } catch (e) {}
+    duration = data.rows[0].elements[0].duration.value;
   }
   res.redirect("http://localhost:3000/selection");
 });

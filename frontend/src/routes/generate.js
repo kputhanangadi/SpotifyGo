@@ -24,6 +24,7 @@ export default function GeneratePage() {
       });
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         setImage(data);
       }
     }
@@ -37,7 +38,7 @@ export default function GeneratePage() {
           <b>(Check your Spotify account for: "SpotifyGo")</b>
         </p>
       </div>
-      <div className="header-gen">
+      <div className="header">
         <img className="gen-img" src={image}></img>
       </div>
     </>
