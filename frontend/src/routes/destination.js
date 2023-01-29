@@ -14,7 +14,8 @@ export default function DestinationPage() {
         <TextField id="outlined-basic" label="Destination" variant="outlined" />
       </div>
       <div class="grid-item">
-        <GenericButton class="grid-item"
+        <GenericButton
+          class="grid-item"
           href={"http://localhost:3000/selection"}
           text={"New Playlist"}
         />
@@ -35,5 +36,3 @@ export default function DestinationPage() {
 //     letter-spacing: .15rem;
 //     text-indent: 10px;
 //   }
-
-

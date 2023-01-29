@@ -77,7 +77,7 @@ export default function SelectionPage(props) {
       .then((data) => {
         const newPlaylists = [...playlists];
         for (let [key, playlist] of Object.entries(data)) {
-          for (let i = 0; i < playlist.length; i++) {
+          for (let i = 0; i < playlist.length + 1; i++) {
             // let playlist = playlist[i];
             // console.log(playlist);
             newPlaylists[i].title = data[i][0][1];
@@ -92,7 +92,7 @@ export default function SelectionPage(props) {
 
   const handleGenerate = () => {
     navigate("/generate", {
-      // state: { playlists: { ...playlists }, checked: { ...checked } },
+      state: { playlists: playlists, checked: checked },
     });
   };
 
@@ -109,12 +109,17 @@ export default function SelectionPage(props) {
         {/* TODO: href, onChange method */}
       </div>
       <div className="margin-top header flex center-font">
-        <GenericButton
-          text={"Generate Playlist!"}
-          onChange={() => {
-            handleGenerate();
-          }}
-        />
+        <Link
+          to="/generate"
+          state={{ name: "hi", playlists: playlists, checked: checked }}
+        >
+          <GenericButton
+            text={"Generate Playlist!"}
+            // onChange={() => {
+            //   handleGenerate();
+            // }}
+          />
+        </Link>
       </div>
     </>
   );
