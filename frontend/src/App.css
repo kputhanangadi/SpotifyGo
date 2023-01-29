@@ -65,8 +65,7 @@ h1 {
   grid-template-areas: 100% / 1fr 1fr 1fr;
   justify-content: center;
   /* border: 4px solid wheat; */
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 10vh;
   background-color: #06D6A0;
 }
 
