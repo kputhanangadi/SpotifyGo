@@ -6,15 +6,15 @@ import { TextField } from "@mui/material";
 
 export default function DestinationPage() {
   return (
-    <div class="grid-container">
-      <div class="grid-item">
+    <div className="grid-container center-font">
+      <div className="grid-item">
         <TextField id="outlined-basic" label="Start" variant="outlined" />
       </div>
       <div class="grid-item">
         <TextField id="outlined-basic" label="Destination" variant="outlined" />
       </div>
       <div class="grid-item">
-        <GenericButton class="grid-item"
+        <GenericButton className="grid-item"
           href={"http://localhost:3000/selection"}
           text={"New Playlist"}
         />
@@ -35,5 +35,4 @@ export default function DestinationPage() {
 //     letter-spacing: .15rem;
 //     text-indent: 10px;
 //   }
-
 
