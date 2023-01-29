@@ -99,7 +99,7 @@ export default function SelectionPage(props) {
   return (
     <>
       <div className="header center-font margin-top selection-box flex">
-        <h2>Select the playlists you want to curate from!</h2>
+        <h2 style={{backgroundColor: "#13bd90", padding: "40px", borderRadius: "20px"}}>Select the playlists you want to curate from!</h2>
         {/* {makeRows()} */}
         <Row image={playlists[0].image} title={playlists[0].title} num={0} />
         <Row image={playlists[1].image} title={playlists[1].title} num={1} />
@@ -111,9 +111,9 @@ export default function SelectionPage(props) {
       <div className="margin-top header flex center-font">
         <Link
           to="/generate"
-          state={{ name: "hi", playlists: playlists, checked: checked }}
+          state={{ name: "You're good to go!", playlists: playlists, checked: checked }}
         >
-          <GenericButton text={"Generate Playlist!"} />
+          <GenericButton text={"Generate Playlist"} />
         </Link>
       </div>
     </>

@@ -31,7 +31,14 @@ export default function GeneratePage() {
   }, []);
   return (
     <>
-      <div>{location.state.name}</div>;
+    <div className="gen-div">
+    <h1 className="bottom-margin-0 gen-h1">You're Good To Go!</h1>
+      <p className="gen-p">
+        <b>
+          (Check your Spotify account for: "SpotifyGo")
+        </b>
+      </p>
+      </div>
     </>
   );
 }

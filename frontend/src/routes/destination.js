@@ -43,7 +43,7 @@ export default function DestinationPage() {
         <Link to="/selection">
           <GenericButton
             className="grid-item"
-            text={"New Playlist"}
+            text={"Compute time"}
             onClick={async () => {
               await fetch("http://localhost:5000/locations", {
                 method: "POST",
