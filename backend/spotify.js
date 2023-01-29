@@ -103,9 +103,24 @@ app.post("/generate", async function (req, res) {
     const id = parseUrl(process[i].link).pathname.split("/")[2];
     links.push(id);
   }
+
+  var offset = 0;
+  const pagesize = 100;
+
   for (let i = 0; i < links.length; i++) {
-    const response = await spotifyApi.getPlaylistTracks(links[i]);
+    var response = await spotifyApi.getPlaylistTracks(links[i], {
+      offset: offset,
+    });
     tracks.push(response.body.items);
+    let nextLink = response.body.next;
+    while (nextLink != null) {
+      offset = offset + 100;
+      response = await spotifyApi.getPlaylistTracks(links[i], {
+        offset: offset,
+      });
+      tracks.push(response.body.items);
+      nextLink = response.body.next;
+    }
   }
 
   // TODO: create an algo to process the songs >> assume that the time to meet is a variable
