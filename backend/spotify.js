@@ -97,12 +97,25 @@ app.get("/playlists", async function (req, res) {
   res.send(result);
 });
 
+app.post("/locations", async function (req, res) {
+  const origin = req.body.origin;
+  const destination = req.body.destination;
+  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${GOOGLE_API_KEY}`;
+
+  const locationResponse = await fetch(url);
+  if (locationResponse.ok) {
+    const data = await locationResponse.json();
+    duration = data.rows[0].elements[0].duration.value;
+  }
+  res.redirect("http://localhost:3000/selection");
+});
+
 app.post("/generate", async function (req, res) {
   const process = req.body;
   const links = [];
   const tracks = [];
   var mega_list = [];
-  var time_to_destination = 0; // will be given to me
+  var time_to_destination = duration * 1000; // will be given to me
   var new_playlist = []; // array with tracks in new playlist
   var dup_set = new Set();
   for (let i = 0; i < process.length; i++) {
@@ -137,24 +150,18 @@ app.post("/generate", async function (req, res) {
     }
   }
 
+  const pl = await spotifyApi.createPlaylist("SpotifyGo");
+  await spotifyApi.addTracksToPlaylist(pl.body.id, new_playlist);
+
+  const imageURL = await (await spotifyApi.getPlaylist(pl.body.id)).body.images[0].url;
+
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-});
 
-app.post("/locations", async function (req, res) {
-  const origin = req.body.origin;
-  const destination = req.body.destination;
-  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${GOOGLE_API_KEY}`;
-
-  const response = await fetch(url);
-  const data = await response.json();
-  // const x = response.json();
-  // const distance = response.data.rows[0].elements[0].distance.text;
-  duration = data.rows[0].elements[0].duration.text;
-  res.redirect("http://localhost:3000/selection");
+  res.send(JSON.stringify(imageURL));
 });
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);

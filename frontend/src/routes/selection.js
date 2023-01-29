@@ -106,7 +106,6 @@ export default function SelectionPage(props) {
         <Row image={playlists[2].image} title={playlists[2].title} num={2} />
         <Row image={playlists[3].image} title={playlists[3].title} num={3} />
         <Row image={playlists[4].image} title={playlists[4].title} num={4} />
-        {/* TODO: href, onChange method */}
       </div>
       <div className="margin-top header flex center-font">
         <Link

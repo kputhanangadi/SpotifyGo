@@ -56,6 +56,6 @@ export default function DestinationPage() {
           />
         </Link>
       </div>
-      </div>
+    </div>
   );
 }
