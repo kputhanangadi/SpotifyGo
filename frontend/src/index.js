@@ -34,15 +34,15 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
-function getDistance(origin, destination) {
-  const API_KEY = 'AIzaSyDyOukcRQcB-UUFagu2LGt_nm137umn2k8';
-  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${API_KEY}`;
+// function getDistance(origin, destination) {
+//   const API_KEY = 'AIzaSyDyOukcRQcB-UUFagu2LGt_nm137umn2k8';
+//   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${origin}&destinations=${destination}&key=${API_KEY}`;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const distance = data.rows[0].elements[0].distance.text;
-      console.log(`The distance between ${origin} and ${destination} is ${distance}.`);
-    })
-    .catch(error => console.error(error));
-}
+//   fetch(url)
+//     .then(response => response.json())
+//     .then(data => {
+//       const distance = data.rows[0].elements[0].distance.text;
+//       console.log(`The distance between ${origin} and ${destination} is ${distance}.`);
+//     })
+//     .catch(error => console.error(error));
+// }
