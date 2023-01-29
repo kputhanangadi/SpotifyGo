@@ -39,5 +39,127 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+</head>
+ 
+    <div class="container">
+        <div class="row">
+    <div class="jumbotron">
+      <h1>Time & Distance Calculator Between Two Locations & Addresses</h1>
+    </div>
+ 
+    <div class="col-md-12">
+      <form id="distance_form">
+        <div class="form-group">
+          <label>Origin: </label>
+          <input
+            class="form-control"
+            id="from_places"
+            placeholder="Enter a location"
+          />
+          <input id="origin" name="origin" required="" type="hidden" />
+        </div>
+ 
+        <div class="form-group">
+          <label>Destination: </label>
+          <input
+            class="form-control"
+            id="to_places"
+            placeholder="Enter a location"
+          />
+          <input
+            id="destination"
+            name="destination"
+            required=""
+            type="hidden"
+          />
+        </div>
+        <input class="btn btn-primary" type="submit" value="Calculate" />
+      </form>
+ 
+      <div id="result">
+        <ul class="list-group">
+          <li
+            id="mile"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            Distance In Mile :
+          </li>
+          <li
+            id="kilo"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            Distance is Kilo:
+          </li>
+          <li
+            id="text"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            IN TEXT:
+          </li>
+          <li
+            id="minute"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            IN MINUTES:
+          </li>
+          <li
+            id="from"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            FROM:
+          </li>
+          <li
+            id="to"
+            class="
+              list-group-item
+              d-flex
+              justify-content-between
+              align-items-center
+            "
+          >
+            TO:
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+    <br><br>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyDyOukcRQcB-UUFagu2LGt_nm137umn2k8"
+    type="text/javascript"></script>
 </html>

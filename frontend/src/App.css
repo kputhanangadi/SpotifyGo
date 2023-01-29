@@ -3,12 +3,6 @@
   font-size: calc(10px + 2vmin);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .header {
   background-color: inherit;
   display: flex;
@@ -57,7 +51,6 @@
   margin-right: 25%;
 }
 
-@keyframes spin-btn {}
 
 /* Destination Page CSS */
 

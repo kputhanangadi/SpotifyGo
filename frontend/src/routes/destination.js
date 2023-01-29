@@ -12,14 +12,14 @@ export default function DestinationPage() {
         </form>
       </div>
       <div class="grid-item">
-        <GenericButton
+        {/* <GenericButton
           href={"http://localhost:3000/selection"}
           id="GenPL"
           text={"New Playlist"}
-        />
-        {/* <button href={"http://localhost:3000/selection"} id="GenPL">
+        /> */}
+        <button href={"http://localhost:3000/selection"} id="GenPL">
           NEW PLAYLIST
-        </button> */}
+        </button>
       </div>
     </div>
   );
@@ -121,3 +121,6 @@ function fillInAddress() {
 }
 
 window.initAutocomplete = initAutocomplete;
+
+
+
