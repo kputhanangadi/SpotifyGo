@@ -19,11 +19,6 @@ const scopes = [
   "playlists-modify-private",
   "playlist-read-private",
   "playlist-read-collaborative",
-  "user-read-currently-playing",
-  "user-read-recently-played",
-  "user-read-playback-state",
-  "user-top-read",
-  "user-modify-playback-state",
 ];
 const redirectUri = "http://localhost:5000/callback";
 const clientId = process.env.SPOTIFY_CLIENT_ID;
@@ -38,8 +33,6 @@ const spotifyApi = new SpotifyWebApi({
 
 // ENDPOINTS:
 app.get("/login", function (req, res) {
-  // res.cookie(stateKey, state);
-
   // your application requests authorization
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
@@ -83,8 +76,9 @@ app.get("/callback", function (req, res) {
 });
 
 app.get("/playlists", async function (req, res) {
-  const playlists = (await spotifyApi.getUserPlaylists()).body.items;
-  // result.set(spotifyApi.getUser().then())
+  const playlists = await spotifyApi.getUserPlaylists();
+  // response.body.items
+
   var result = {};
   let count = 0;
   for (let playlist of playlists) {
@@ -94,20 +88,16 @@ app.get("/playlists", async function (req, res) {
       ["link", playlist.external_urls.spotify],
       ["tracks", playlist.tracks.href],
     ];
-    // result.push(m);
   }
-  // var myObject = [];
-  // let obj = {};
-  // for (var key in myObject) {
-  //   obj[key] = myObject[key];
-  // }
   res.send(result);
-  // res.redirect("http://localhost:3000/destination");
 });
+
+// app.post("/generate", function (req, res) {
+//   req.body.
+// });
 
 const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state);
 console.log(authorizeURL);
 
-// TODO: setup express API for callback and then authorize for user playlists and then create and then pull data
 console.log(`Listening on ${port}`);
 app.listen(port);

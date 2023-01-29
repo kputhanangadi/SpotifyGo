@@ -2,9 +2,10 @@ import { Grid, Checkbox, Paper, Box, Typography } from "@mui/material";
 import "../css/selection.css";
 import "../App.css";
 import GenericButton from "../components/GenericButton";
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
+import { createBrowserRouter, Link, useNavigate } from "react-router-dom";
 
-export default function SelectionGrid(props) {
+export default function SelectionPage(props) {
   const [playlists, setPlaylists] = useState([
     { title: "", image: "", link: "", tracks: "" },
     { title: "", image: "", link: "", tracks: "" },
@@ -12,8 +13,8 @@ export default function SelectionGrid(props) {
     { title: "", image: "", link: "", tracks: "" },
     { title: "", image: "", link: "", tracks: "" },
   ]);
-  // const [playlists, setPlaylists] = useState(false);
   const [checked, setChecked] = useState([false, false, false, false, false]);
+  const navigate = useNavigate();
 
   const Check = (props) => {
     return (
@@ -43,17 +44,23 @@ export default function SelectionGrid(props) {
   const Row = (props) => {
     return (
       <Grid
-        sx={{ width: 0.6, backgroundSize: "contain" }}
+        sx={{ height: 0.2, backgroundSize: "contain" }}
         display="grid"
         className="width50"
-        gridTemplateColumns="0.4fr 6.6fr 3fr"
+        gridTemplateColumns="0.4fr 6.6fr 5vw"
         gridAutoFlow="row"
         justifyContent="center"
         alignItems="center"
+        overflow="hidden"
       >
         <Check num={props.num} />
         <Title title={props.title} />
-        <Box component="img" alt={"Spotify album image"} src={props.image} />
+        <Box
+          sx={{ width: "5vw" }}
+          component="img"
+          // alt={"Spotify album image"}
+          src={props.image}
+        />
         {/* TODO: make box scale with larger image? */}
       </Grid>
     );
@@ -83,10 +90,17 @@ export default function SelectionGrid(props) {
       });
   }, []);
 
+  const handleGenerate = () => {
+    navigate("/generate", {
+      // state: { playlists: { ...playlists }, checked: { ...checked } },
+    });
+  };
+
   return (
     <>
       <div className="header center-font margin-top selection-box flex">
         <h2>Select the playlists you want to curate from!</h2>
+        {/* {makeRows()} */}
         <Row image={playlists[0].image} title={playlists[0].title} num={0} />
         <Row image={playlists[1].image} title={playlists[1].title} num={1} />
         <Row image={playlists[2].image} title={playlists[2].title} num={2} />
@@ -94,9 +108,13 @@ export default function SelectionGrid(props) {
         <Row image={playlists[4].image} title={playlists[4].title} num={4} />
         {/* TODO: href, onChange method */}
       </div>
-      <h2></h2>
       <div className="margin-top header flex center-font">
-        <GenericButton text={"Generate Playlist!"} href={""} onChange={"hi"} />
+        <GenericButton
+          text={"Generate Playlist!"}
+          onChange={() => {
+            handleGenerate();
+          }}
+        />
       </div>
     </>
   );
