@@ -105,7 +105,9 @@ app.post("/locations", async function (req, res) {
   const locationResponse = await fetch(url);
   if (locationResponse.ok) {
     const data = await locationResponse.json();
-    duration = data.rows[0].elements[0].duration.value;
+    try {
+      duration = data.rows[0].elements[0].duration.value;
+    } catch (e) {}
   }
   res.redirect("http://localhost:3000/selection");
 });
