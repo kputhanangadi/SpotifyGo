@@ -1,6 +1,6 @@
 # SpotifyGo
 
-![HomePage](https://user-images.githubusercontent.com/117777515/215363963-2478553b-8ceb-40dd-96ce-674e5d54c880.png)
+![HomepageSpotifyGo](https://user-images.githubusercontent.com/117777515/215364482-2ce7db08-9206-425e-8586-5601ceab8c51.png)
 
 ## Inspiration
 The inspiration for this project came from the realization that our commutes to UBC have been a tedious and unenjoyable part of their day.  Listening to music to pass the time during our commute was a saving grace; however, we found it tedious to have to constantly switch between songs or playlists because they don't fit the exact duration of their drive and songs were getting repetitive. We wanted to create a solution that would make the commute more enjoyable by providing a custom playlist tailored to the exact length of any commute to deliver a fresh stream of music. Introducing - **Spotify Go**.
@@ -41,3 +41,4 @@ With Hackrithmitic 2 being our first hackathon it was definitely a challenging e
 ![Music Selection](https://user-images.githubusercontent.com/117777515/215364037-a53f8847-f3a8-43b3-bdbe-2b616bd96a33.png)
 
 ![Final_Page](https://user-images.githubusercontent.com/117777515/215364045-596ad643-157e-4b04-bd45-a66b781c6369.png)
+
