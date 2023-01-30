@@ -1,5 +1,7 @@
 # SpotifyGo
 
+![HomePage](https://user-images.githubusercontent.com/117777515/215363963-2478553b-8ceb-40dd-96ce-674e5d54c880.png)
+
 ## Inspiration
 The inspiration for this project came from the realization that our commutes to UBC have been a tedious and unenjoyable part of their day.  Listening to music to pass the time during our commute was a saving grace; however, we found it tedious to have to constantly switch between songs or playlists because they don't fit the exact duration of their drive and songs were getting repetitive. We wanted to create a solution that would make the commute more enjoyable by providing a custom playlist tailored to the exact length of any commute to deliver a fresh stream of music. Introducing - **Spotify Go**.
 
@@ -29,8 +31,6 @@ With Hackrithmitic 2 being our first hackathon it was definitely a challenging e
 - Allow users to add multiple trips to generate multiple playlists at a single instance.
 - Building features within the website to allow users to view/download/share their created playlist.
 - Integration of other music service providers such as Apple Music.
-
-![HomePage](https://user-images.githubusercontent.com/117777515/215363963-2478553b-8ceb-40dd-96ce-674e5d54c880.png)
 
 ![SpotifyPage](https://user-images.githubusercontent.com/117777515/215363977-8f9e3c5f-fb11-4c7d-9dfe-3790585d2c8b.png)
 
