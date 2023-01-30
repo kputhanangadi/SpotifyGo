@@ -30,4 +30,14 @@ With Hackrithmitic 2 being our first hackathon it was definitely a challenging e
 - Building features within the website to allow users to view/download/share their created playlist.
 - Integration of other music service providers such as Apple Music.
 
-![My Remote Image]([https://www.dropbox.com/s/.../my-remote-image.jpg?dl=0](https://www.dropbox.com/s/cqb1j0su8btpww8/HomePage.png?dl=0))
+![HomePage](https://user-images.githubusercontent.com/117777515/215363963-2478553b-8ceb-40dd-96ce-674e5d54c880.png)
+
+![SpotifyPage](https://user-images.githubusercontent.com/117777515/215363977-8f9e3c5f-fb11-4c7d-9dfe-3790585d2c8b.png)
+
+![DestinationPage](https://user-images.githubusercontent.com/117777515/215364016-47b89f90-c755-4429-8071-3f71809d9693.png)
+
+![EnterAdress](https://user-images.githubusercontent.com/117777515/215363993-89997616-4b90-4a8a-b311-3ec2639cba76.png)
+
+![Music Selection](https://user-images.githubusercontent.com/117777515/215364037-a53f8847-f3a8-43b3-bdbe-2b616bd96a33.png)
+
+![Final_Page](https://user-images.githubusercontent.com/117777515/215364045-596ad643-157e-4b04-bd45-a66b781c6369.png)
