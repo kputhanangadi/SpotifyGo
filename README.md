@@ -29,3 +29,6 @@ With Hackrithmitic 2 being our first hackathon it was definitely a challenging e
 - Allow users to add multiple trips to generate multiple playlists at a single instance.
 - Building features within the website to allow users to view/download/share their created playlist.
 - Integration of other music service providers such as Apple Music.
+
+
+![alt text](![HomePage](https://user-images.githubusercontent.com/117777515/215363665-2307d495-c8ff-4725-9a11-97a60651313c.png))
